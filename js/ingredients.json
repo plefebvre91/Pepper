@@ -1,0 +1,25 @@
+{
+    base : [
+	{name:"Pâtes"},    
+	{name:"Riz"},      
+	{name:"Céréales"}, 
+	{name:"Haricots"}, 
+	{name:"Lentilles"}
+    ],
+
+    vegetables: [
+	{name:"Oignon"}, 
+	{name:"Tomates"},
+	{name:"Poivron"},
+	{name:"Melon"},  
+	{name:"Comté"},  
+	{name:"Feta"}
+    ],
+
+    meat: [
+	{name:"Thon"},   
+	{name:"Jambon"}, 
+	{name:"Saumon"}, 
+	{name:"Poulet"}
+    ]
+}

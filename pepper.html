@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta lang="fr" charset="utf-8"/>
+    <title>Pepper</title>
+    <script type="text/javascript"
+	    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js">
+    </script>
+
+  </head>
+  <body>
+    <script src="pepper-angular.js"></script>
+    <div ng-app="HelloWorldApp">
+      <div ng-controller="HelloWorldController">
+        <button ng-click="change()">OK</button> 
+	<h1>Pepper</h1>
+	<p><b>Base</b> : {{base}}</p>
+	<p><b>Légumes</b> : {{vegetables}}</p>
+	<p><b>Viandes</b> : {{meat}}</p>
+
+      </div>
+    </div>
+
+
+  </body>
+</html>
