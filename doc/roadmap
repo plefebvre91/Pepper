@@ -1,11 +1,11 @@
-- choisir les requetes/URL (modulable)
-- stocker les aliments (de facon fixe)
-- écrire un client qui tire tous aliments
-- construire les catégories d'aliments
-- choisir au hasard les aliments
-- choisir la techno client (js)
+- choisir les requetes/URL (modulable) --------- OK
+- stocker les aliments (de facon fixe) --------- OK
+- écrire un client qui tire tous aliments ------ OK
+- construire les catégories d'aliments --------- à revoir (map[cle]=valeur)
+- choisir au hasard les aliments --------------- à revoir en fonction des categories
+- choisir la techno client (js) ---------------- OK
+- écrire un client echo ------------------------ OK
 - choisir la techno client (front)
-- écrire un client echo
 ...
 
 - faire ajouter des aliments
