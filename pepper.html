@@ -11,13 +11,15 @@
   <body>
     <script src="pepper-angular.js"></script>
     <div ng-app="HelloWorldApp">
-      <div ng-controller="HelloWorldController">
-        <button ng-click="change()">OK</button> 
+      <div style="width:20%; margin:auto;" ng-controller="HelloWorldController">
+
 	<h1>Pepper</h1>
 	<p><b>Base</b> : {{base}}</p>
 	<p><b>Légumes</b> : {{vegetables}}</p>
 	<p><b>Viandes</b> : {{meat}}</p>
-
+	<div align="center">
+	  <button ng-click="change()">J'ai faim</button>
+	</div>
       </div>
     </div>
 

@@ -67,10 +67,33 @@ http.createServer(function(request, response) {
 		//body: body
 	    };
 	    
-	    response.write(JSON.stringify(ingredients));
-//	    response.write(responseBody.url);
+	    
+	    
+	    response.write(JSON.stringify(selectIngredients(ingredients)));
 	    
 	    response.end();
 	});
     /* Listen */
 }).listen(1234);
+
+
+function randomBetween(a, b) {
+    return Math.floor(Math.random() * b) + a;  
+}
+
+function selectIngredients(ingredients) {
+    var baseSize = ingredients.base.length - 1;
+    var meatSize = ingredients.meat.length - 1;
+    var vegetablesSize = ingredients.vegetables.length - 1;
+    
+    var a = randomBetween(0,baseSize);
+    var b = randomBetween(0,meatSize);
+    var c = randomBetween(0,vegetablesSize);
+    
+    var ing = new Object();
+    ing.base  = ingredients.base[a];
+    ing.meat  = ingredients.meat[b];
+    ing.vegetables = ingredients.vegetables[c];
+
+    return ing;
+}

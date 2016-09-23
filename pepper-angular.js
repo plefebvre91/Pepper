@@ -18,17 +18,16 @@ angular.module('HelloWorldApp', [])
 	       url: 'http://localhost:1234'
 	   }).then(function successCallback(response) {
 	       
-
+	       console.log(response);
 	       console.log(response.data);
 	       /*var json = JSON.parse(response);*/
-	       var base = response.data.base;
-	       var vegetables = response.data.vegetables;
-	       var meat = response.data.meat;
+	       $scope.base = response.data.base.name;
+	       $scope.vegetables = response.data.vegetables.name;
+	       $scope.meat = response.data.meat.name;
 	       
 	       
-	       console.log(base);
-	       for (var i=0; i<base.length; i++) {
-		   $scope.base += base[i].name + " ";
+	       /*for (var i=0; i<base.length; i++) {
+		 $scope.base += base[i].name + " ";
 	       }
 
 	       for (var i=0; i<vegetables.length; i++) {
@@ -36,7 +35,7 @@ angular.module('HelloWorldApp', [])
 	       }		   
 	       for (var i=0; i<meat.length; i++) {
 		   $scope.meat += meat[i].name + " ";
-	       }
+	       }*/
 
 	   }, function errorCallback(response) {
 	       $scope.greeting = "error";
