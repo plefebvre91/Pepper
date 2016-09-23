@@ -1,0 +1,13 @@
+- choisir les requetes/URL (modulable)
+- stocker les aliments (de facon fixe)
+- écrire un client qui tire tous aliments
+- construire les catégories d'aliments
+- choisir au hasard les aliments
+- choisir la techno client (js)
+- choisir la techno client (front)
+- écrire un client echo
+...
+
+- faire ajouter des aliments
+- faire supprimer des aliments
+- tests

@@ -1,0 +1,18 @@
+Pepper requests
+---------------
+
+GET requests
+------------
+  
+  /help        : display help
+  /salad       : build a salad
+  /ingredients : show all ingredients
+  /version     : show Pepper version
+
+
+POST requests
+-------------
+
+  /add/#type {#name} : add the #name ingredients of category #type
+  /remove    {#id}   : remove the ingredients of ID #id
+  
