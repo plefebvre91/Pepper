@@ -6,25 +6,39 @@ var ingredients =
     base : [
 	{name:"Pâtes"},    
 	{name:"Riz"},      
-	{name:"Céréales"}, 
+	{name:"Céréales méditerranéennes"}, 
 	{name:"Haricots"}, 
-	{name:"Lentilles"}
+	{name:"Lentilles"},
+	{name:"Salade verte"},
+	{name:"Chicon (endive)"},
+	{name:"Pommes de terres"}
+	
     ],
 
     vegetables: [
 	{name:"Oignon"}, 
-	{name:"Tomates"},
+	{name:"Tomate"},
 	{name:"Poivron"},
 	{name:"Melon"},  
 	{name:"Comté"},  
-	{name:"Feta"}
+	{name:"Feta"},
+	{name:"Avocat"},
+	{name:"Concombre"},
+	{name:"Olives"},
+	{name:"Pommes de terres"}
     ],
 
     meat: [
 	{name:"Thon"},   
 	{name:"Jambon"}, 
 	{name:"Saumon"}, 
-	{name:"Poulet"}
+	{name:"Poulet"},
+	{name:"Oeuf"},
+	{name:"Lardons"},
+	{name:"Gésiers"},
+	{name:"Dinde"},
+	{name:"Porc"},
+	{name:"Saucisson Lyonnais"}
     ]
 };
 
