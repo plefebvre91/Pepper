@@ -1,6 +1,33 @@
 /* Create HTTP server instance */
 var http = require('http');
 
+var ingredients = 
+{
+    base : [
+	{name:"Pâtes"},    
+	{name:"Riz"},      
+	{name:"Céréales"}, 
+	{name:"Haricots"}, 
+	{name:"Lentilles"}
+    ],
+
+    vegetables: [
+	{name:"Oignon"}, 
+	{name:"Tomates"},
+	{name:"Poivron"},
+	{name:"Melon"},  
+	{name:"Comté"},  
+	{name:"Feta"}
+    ],
+
+    meat: [
+	{name:"Thon"},   
+	{name:"Jambon"}, 
+	{name:"Saumon"}, 
+	{name:"Poulet"}
+    ]
+};
+
 
 http.createServer(function(request, response) {
     var headers = request.headers;
@@ -37,11 +64,12 @@ http.createServer(function(request, response) {
 		headers: headers,
 		method: method,
 		url: url,
-		body: body
+		//body: body
 	    };
-
-	    //response.write(JSON.stringify(responseBody));
-	    response.write(responseBody.url);
+	    
+	    response.write(JSON.stringify(ingredients));
+//	    response.write(responseBody.url);
+	    
 	    response.end();
 	});
     /* Listen */
