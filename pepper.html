@@ -27,6 +27,18 @@
       crossorigin="anonymous">
     </script>
 
+    <style>
+     .btn-round {
+       width: 60px;
+       height: 60px;
+       border-radius: 50%;
+     }
+     
+     body{
+       background : #E4E644;
+     }
+
+    </style>
   </head>
 
   <body ng-app="Pepper">
@@ -39,34 +51,49 @@
       <div class="row" ng-controller="PepperCtrl">
 
 	<div class="col-md-12">
-	<h1>Pepper</h1>	  
+
 	  <!-- Update button -->
-	  <button  ng-click="pepperGetIngredients()" type="button" class="btn btn-lg btn-block btn-success">
-	    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-	    Salad!
-	  </button>
 	  
-	  <div class="row text-center">
+	  <div class="row text-left">
+	    
 	    <div class="col-xs-6">
-	      <h3><small><b>Base</b></small><br/>{{base}}</h3>
-	    </div>
-	    <div class="col-xs-6">
-	      <h3><small><b>Légumes</b></small><br/>{{vegetables}}</h3>
-	    </div>
-	  </div>
-
-	  <div class="row text-center">
-	    <div class="col-xs-6">
-	      <h3><small><b>Fromage</b></small><br/>{{cheese}}</h3>
-	    </div>
-	    <div class="col-xs-6">
-	      <h3><small><b>Viande</b></small><br/>{{meat}}</h3>
+	      <h1>Pepper</h1>
+	      <h3><!--<small>Base</small>   <br/>--><img src="img/base.svg" height="50" style="margin-right: 2%;"/>{{base}}</h3>
+	      <h3><!--<small>Légumes</small><br/>--><img src="img/vegetables.svg" height="50" style="margin-right: 2%;"/>{{vegetables}}</h3>
+	      <h3><!--<small>Fromage</small><br/>--><img src="img/cheese.svg" height="50" style="margin-right: 2%;"/>{{cheese}}</h3>
+	      <h3><!--<small>Viande</small> <br/>--><img src="img/meat.svg" height="50" style="margin-right: 2%;"/>{{meat}}</h3>
+	      <br/>
+	      <button  ng-click="pepperGetIngredients()" type="button" class="btn btn-lg btn-default btn-round">
+		<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+	      </button>
+	      
 	    </div>
 	  </div>
+	  
 
+
+	  
+	  <!--	  <div class="row text-center">
+	  <div class="col-xs-6">
+	    <h3><small><b>Base</b></small><br/>{{base}}</h3>
+	  </div>
+	  <div class="col-xs-6">
+	    <h3><small><b>Légumes</b></small><br/>{{vegetables}}</h3>
+	  </div>
 	</div>
-      
+
+	<div class="row text-center">
+	  <div class="col-xs-6">
+	    <h3><small><b>Fromage</b></small><br/>{{cheese}}</h3>
+	  </div>
+	  <div class="col-xs-6">
+	    <h3><small><b>Viande</b></small><br/>{{meat}}</h3>
+	  </div>
+	</div>-->
+
       </div>
+      
+    </div>
     </div> <!-- End main container -->
   </body>
 </html>
