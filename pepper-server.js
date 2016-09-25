@@ -30,8 +30,10 @@ var ingredients =
     cheese : [
 	{name:"Comté"},  
 	{name:"Feta"},
+	{name:"Chèvre"},
+	{name:"Parmesan"}
     ],
-
+    
     meat: [
 	{name:"Thon"},   
 	{name:"Jambon"}, 
@@ -114,6 +116,7 @@ function selectIngredients(ingredients) {
     ing.base  = selectIngredient(ingredients.base);
     ing.meat  = selectIngredient(ingredients.meat);
     ing.vegetables = selectIngredient(ingredients.vegetables);
+    ing.cheese = selectIngredient(ingredients.cheese);
 
     return ing;
 }
