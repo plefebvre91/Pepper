@@ -1,6 +1,7 @@
 /* Create HTTP server instance */
 var http = require('http');
 
+/* Ingredients list */
 var ingredients = 
 {
     base : [
@@ -20,12 +21,15 @@ var ingredients =
 	{name:"Tomate"},
 	{name:"Poivron"},
 	{name:"Melon"},  
-	{name:"Comté"},  
-	{name:"Feta"},
 	{name:"Avocat"},
 	{name:"Concombre"},
 	{name:"Olives"},
 	{name:"Pommes de terres"}
+    ],
+
+    cheese : [
+	{name:"Comté"},  
+	{name:"Feta"},
     ],
 
     meat: [
@@ -43,6 +47,7 @@ var ingredients =
 };
 
 
+/* Initialize HTTP server */
 http.createServer(function(request, response) {
     var headers = request.headers;
     var method = request.method;
@@ -81,9 +86,10 @@ http.createServer(function(request, response) {
 		//body: body
 	    };
 	    
-	    
-	    
-	    response.write(JSON.stringify(selectIngredients(ingredients)));
+	    /* Send response */
+	    response.write(
+		JSON.stringify(
+		    selectIngredients(ingredients)));
 	    
 	    response.end();
 	});
@@ -95,19 +101,19 @@ function randomBetween(a, b) {
     return Math.floor(Math.random() * b) + a;  
 }
 
+function selectIngredient(array) {
+    var size = array.length;
+
+    var n = randomBetween(0, size-1);
+
+    return array[n];
+}
+
 function selectIngredients(ingredients) {
-    var baseSize = ingredients.base.length - 1;
-    var meatSize = ingredients.meat.length - 1;
-    var vegetablesSize = ingredients.vegetables.length - 1;
-    
-    var a = randomBetween(0,baseSize);
-    var b = randomBetween(0,meatSize);
-    var c = randomBetween(0,vegetablesSize);
-    
     var ing = new Object();
-    ing.base  = ingredients.base[a];
-    ing.meat  = ingredients.meat[b];
-    ing.vegetables = ingredients.vegetables[c];
+    ing.base  = selectIngredient(ingredients.base);
+    ing.meat  = selectIngredient(ingredients.meat);
+    ing.vegetables = selectIngredient(ingredients.vegetables);
 
     return ing;
 }

@@ -1,0 +1,18 @@
+@startuml
+activate Client
+Client -> Server : update request
+
+activate Server
+Server -> Base : Get data
+
+activate Base
+Base --> Server : All ingredients (JSON object)
+deactivate Base
+
+Server -> Server : Select elements
+Server --> Client : Selected ingredients (JSON object)
+deactivate Server
+
+Client -> Client : Read and display response
+deactivate Client
+@enduml

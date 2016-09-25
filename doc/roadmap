@@ -5,9 +5,9 @@
 - choisir au hasard les aliments --------------- à revoir en fonction des categories
 - choisir la techno client (js) ---------------- OK
 - écrire un client echo ------------------------ OK
-- choisir la techno client (front)
-...
-
+- choisir la techno client (front) ------------- à revoir (Bootstrap en attendant)
 - faire ajouter des aliments
 - faire supprimer des aliments
 - tests
+- évaluer le cout
+- generation en fonction du gout
