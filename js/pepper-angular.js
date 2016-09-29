@@ -6,7 +6,7 @@ angular.module('Pepper', [])
        $scope.vegetables = "...";
        $scope.meat = "...";
        $scope.cheese = "...";
-       
+       $scope.response = "";
        /* Onclick function */
        $scope.pepperGetIngredients = function(){
 	   
@@ -17,6 +17,7 @@ angular.module('Pepper', [])
 	   }).then(function successCallback(response) {
 	       	       
 	       /* Read response */
+	       $scope.response = response.data;
 	       $scope.base = response.data.base.name;
 	       $scope.vegetables = response.data.vegetables.name;
 	       $scope.meat = response.data.meat.name;

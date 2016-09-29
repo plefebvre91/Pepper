@@ -13,6 +13,8 @@
     <script type="text/javascript"
 	    src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
     </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico" rel="stylesheet">
     
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
@@ -29,14 +31,38 @@
 
     <style>
      .btn-round {
-       width: 20%;
+       width: 5%;
        height: auto;
        border-radius: 50%;
      }
      
      body{
-       background : #FBFB99;
+       background : white;
      }
+
+     h1
+     {
+       color:       #CC0000;
+       font-family: 'Pacifico', cursive;
+       font-size:   3.0em;
+     }
+
+     .subtitles
+     {
+       font-family: 'Dosis', 'sans-serif';
+       color : #454545;
+       font-size: 1em;
+       text-transform: capitalize;
+     }
+
+     .elements
+     {
+       font-family: 'Pacifico', cursive;
+       color : #33CC00;
+       font-size: 2em;
+     }
+
+     
 
     </style>
   </head>
@@ -54,20 +80,27 @@
 
 	  <!-- Update button -->
 	  
-	  <div class="row text-left">
+	  <div class="row text-center">
 	    
 	    <div class="col-xs-12">
 	      
-	      <div class="row text-left" style="color: white;background-color:#FAFA88;">
-		<div class="col-xs-12">
+	      <div class="row text-left" style="color: white;background-color:#EFEFEF;">
+		<div class="text-center col-xs-12">
 		<h1>Pepper</h1>
 		</div>
 	      </div>
-	      <h3><!--<small>Base</small>   <br/>--><img src="img/base.svg"  style="margin-right: 2%; width:10%; height:auto;"/>{{base}}</h3>
-	      <h3><!--<small>Légumes</small><br/>--><img src="img/vegetables.svg" style="margin-right: 2%; width:10%; height:auto;"/>{{vegetables}}</h3>
-	      <h3><!--<small>Fromage</small><br/>--><img src="img/cheese.svg"  style="margin-right: 2%; width:10%; height:auto;"/>{{cheese}}</h3>
-	      <h3><!--<small>Viande</small> <br/>--><img src="img/meat.svg" style="margin-right: 2%; width:10%; height:auto;"/>{{meat}}</h3>
-	      <br/>
+	      
+	      <div ng-repeat="(key, value) in response"> 
+		<p class="subtitles">{{key}}<br/><span class="elements">{{value.name}}</span></p><hr/>
+	      </div>
+<!--
+		<p class="subtitles">Base    <br/> <span class="elements">{{base}}</span></p>       <hr/>
+		<p class="subtitles">Légumes <br/> <span class="elements">{{vegetables}}</span></p> <hr/>
+	      <p class="subtitles">Fromage <br/> <span class="elements">{{cheese}}</span></p>     <hr/>
+	      <p class="subtitles">Meat    <br/> <span class="elements">{{meat}}</span></p>       </hr/>
+-->
+<img src="img/ring.svg" />
+
 	      <button  ng-click="pepperGetIngredients()" type="button" class="btn btn-default btn-round">
 		<img src="img/base.svg" />
 <!--		<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>-->
