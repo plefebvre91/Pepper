@@ -4,45 +4,46 @@ var http = require('http');
 /* Ingredients list */
 var ingredients = 
 {
-    base : [
-	{name:"Pâtes"},    
-	{name:"Riz"},      
-	{name:"Céréales méditerranéennes"}, 
-	{name:"Haricots"}, 
-	{name:"Lentilles"},
-	{name:"Salade verte"},
-	{name:"Chicon (endive)"},
-	{name:"Pommes de terres"}
-	
+    "base" : [
+	{"name":"Pâtes"},    
+	{"name":"Riz"},      
+	{"name":"Céréales méditerranéennes"}, 
+	{"name":"Haricots"}, 
+	{"name":"Lentilles"},
+	{"name":"Salade verte"},
+	{"name":"Chicon (endive)"},
+	{"name":"Pommes de terres"}
     ],
 
-    vegetables: [
-	{name:"Oignon"}, 
-	{name:"Tomate"},
-	{name:"Poivron"},
-	{name:"Melon"},  
-	{name:"Avocat"},
-	{name:"Concombre"},
-	{name:"Olives"},
-	{name:"Pommes de terres"}
+    "vegetables" : [
+	{"name":"Oignon"}, 
+	{"name":"Tomate"},
+	{"name":"Poivron"},
+	{"name":"Melon"},  
+	{"name":"Avocat"},
+	{"name":"Concombre"},
+	{"name":"Olives"},
+	{"name":"Pommes de terres"}
     ],
 
-    cheese : [
-	{name:"Comté"},  
-	{name:"Feta"},
+    "cheese" : [
+	{"name":"Comté"},  
+	{"name":"Feta"},
+	{"name":"Chèvre"},
+	{"name":"Parmesan"}
     ],
-
-    meat: [
-	{name:"Thon"},   
-	{name:"Jambon"}, 
-	{name:"Saumon"}, 
-	{name:"Poulet"},
-	{name:"Oeuf"},
-	{name:"Lardons"},
-	{name:"Gésiers"},
-	{name:"Dinde"},
-	{name:"Porc"},
-	{name:"Saucisson Lyonnais"}
+    
+    "meat": [
+	{"name":"Thon"},   
+	{"name":"Jambon"}, 
+	{"name":"Saumon"}, 
+	{"name":"Poulet"},
+	{"name":"Oeuf"},
+	{"name":"Lardons"},
+	{"name":"Gésiers"},
+	{"name":"Dinde"},
+	{"name":"Porc"},
+	{"name":"Saucisson Lyonnais"}
     ]
 };
 
@@ -53,7 +54,7 @@ http.createServer(function(request, response) {
     var method = request.method;
     var url = request.url;
     var body = [];
-    
+       
     /* Log any error on console */
     request.on('error', function(err) {
 	console.error(err);
@@ -87,12 +88,13 @@ http.createServer(function(request, response) {
 	    };
 	    
 	    /* Send response */
-	    response.write(
-		JSON.stringify(
-		    selectIngredients(ingredients)));
-	    
+	    var strResponse = JSON.stringify(selectIngredients(ingredients));
+	    response.write(strResponse);
+	    console.log("New salad : " + strResponse);
+
 	    response.end();
 	});
+        
     /* Listen */
 }).listen(1234);
 
@@ -109,11 +111,13 @@ function selectIngredient(array) {
     return array[n];
 }
 
-function selectIngredients(ingredients) {
-    var ing = new Object();
-    ing.base  = selectIngredient(ingredients.base);
-    ing.meat  = selectIngredient(ingredients.meat);
-    ing.vegetables = selectIngredient(ingredients.vegetables);
 
-    return ing;
+function selectIngredients(database) {
+    var salad = new Object();
+
+    for(ingredient in database) {
+	salad[ingredient] = selectIngredient(database[ingredient]);
+    }
+
+    return salad;
 }
