@@ -1,0 +1,33 @@
+.btn-round {
+    width: 5%;
+    height: auto;
+    border-radius: 50%;
+}
+
+body{
+    background : white;
+}
+
+h1
+{
+    color:       #CC0000;
+    font-family: 'Dosis', cursive;
+    font-size:   3.0em;
+}
+
+.subtitles
+{
+    font-family: 'Dosis', 'sans-serif';
+    color : #454545;
+    font-size: 1em;
+    text-transform: capitalize;
+}
+
+.elements
+{
+    font-family: 'Raleway', sans-serif;
+
+    color : #33CC00;
+    font-size: 2em;
+    font-weight:bold;
+}

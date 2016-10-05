@@ -14,13 +14,16 @@
 	    src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
     </script>
 
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Pacifico|Raleway" rel="stylesheet">
     
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
 	  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	  crossorigin="anonymous">
+
+    <!-- Pepper CSS -->
+    <link rel="stylesheet" href="css/pepper-style.css">
 
     <!-- Latest compiled and minified JavaScript -->
     <script 
@@ -29,42 +32,7 @@
       crossorigin="anonymous">
     </script>
 
-    <style>
-     .btn-round {
-       width: 5%;
-       height: auto;
-       border-radius: 50%;
-     }
-     
-     body{
-       background : white;
-     }
 
-     h1
-     {
-       color:       #CC0000;
-       font-family: 'Pacifico', cursive;
-       font-size:   3.0em;
-     }
-
-     .subtitles
-     {
-       font-family: 'Dosis', 'sans-serif';
-       color : #454545;
-       font-size: 1em;
-       text-transform: capitalize;
-     }
-
-     .elements
-     {
-       font-family: 'Pacifico', cursive;
-       color : #33CC00;
-       font-size: 2em;
-     }
-
-     
-
-    </style>
   </head>
 
   <body ng-app="Pepper">
@@ -75,64 +43,34 @@
     <!-- Main container -->
     <div class="container-fluid">
       <div class="row" ng-controller="PepperCtrl">
-
 	<div class="col-md-12">
-
-	  <!-- Update button -->
 	  
 	  <div class="row text-center">
-	    
 	    <div class="col-xs-12">
 	      
-	      <div class="row text-left" style="color: white;background-color:#EFEFEF;">
+	      <!-- Title -->
+	      <div style="color: white; background-color:#EFEFEF;">
 		<div class="text-center col-xs-12">
-		<h1>Pepper</h1>
+		  <h1>Pepper</h1>
 		</div>
 	      </div>
 	      
-	      <div ng-repeat="(key, value) in response"> 
+	      <div ng-show="isLoading">
+		<img src="img/ring.svg" />
+	      </div>
+	      
+	      <div ng-repeat="(key, value) in response" ng-hide="isLoading"> 
 		<p class="subtitles">{{key}}<br/><span class="elements">{{value.name}}</span></p><hr/>
 	      </div>
-<!--
-		<p class="subtitles">Base    <br/> <span class="elements">{{base}}</span></p>       <hr/>
-		<p class="subtitles">Légumes <br/> <span class="elements">{{vegetables}}</span></p> <hr/>
-	      <p class="subtitles">Fromage <br/> <span class="elements">{{cheese}}</span></p>     <hr/>
-	      <p class="subtitles">Meat    <br/> <span class="elements">{{meat}}</span></p>       </hr/>
--->
-<img src="img/ring.svg" />
 
-	      <button  ng-click="pepperGetIngredients()" type="button" class="btn btn-default btn-round">
-		<img src="img/base.svg" />
-<!--		<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>-->
+	      <button  ng-click="pepperGetIngredients()" type="button" class="btn btn-default btn-success">
+		Salade !
 	      </button>
 	      
-	    </div>
-	  </div>
-	  
-
-
-	  
-	  <!--	  <div class="row text-center">
-	  <div class="col-xs-6">
-	    <h3><small><b>Base</b></small><br/>{{base}}</h3>
-	  </div>
-	  <div class="col-xs-6">
-	    <h3><small><b>Légumes</b></small><br/>{{vegetables}}</h3>
+	    </div> <!-- End col -->
 	  </div>
 	</div>
-
-	<div class="row text-center">
-	  <div class="col-xs-6">
-	    <h3><small><b>Fromage</b></small><br/>{{cheese}}</h3>
-	  </div>
-	  <div class="col-xs-6">
-	    <h3><small><b>Viande</b></small><br/>{{meat}}</h3>
-	  </div>
-	</div>-->
-
       </div>
-      
-    </div>
     </div> <!-- End main container -->
   </body>
 </html>

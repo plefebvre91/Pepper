@@ -7,9 +7,12 @@ angular.module('Pepper', [])
        $scope.meat = "...";
        $scope.cheese = "...";
        $scope.response = "";
+       $scope.isLoading = false;
        /* Onclick function */
        $scope.pepperGetIngredients = function(){
 	   
+	   $scope.isLoading = true;
+
 	   /* Perform an HTTP GET to retrieve all ingredients */
 	   $http({
 	       method: 'GET',
@@ -23,6 +26,8 @@ angular.module('Pepper', [])
 	       $scope.meat = response.data.meat.name;
 	       $scope.cheese = response.data.cheese.name;
 	       
+	       $scope.isLoading = false;
+
 	   }, function errorCallback(response) {
 	       console.log("Pepper : An error ocurred during request");
 	   });
