@@ -8,9 +8,14 @@ body{
     background : white;
 }
 
+header
+{
+    background: #9DBCA6;
+}
+
 h1
 {
-    color:       #CC0000;
+    color: white;
     font-family: 'Dosis', cursive;
     font-size:   3.0em;
 }
@@ -18,16 +23,17 @@ h1
 .subtitles
 {
     font-family: 'Dosis', 'sans-serif';
-    color : #454545;
+
     font-size: 1em;
     text-transform: capitalize;
+    color : #50424B;
 }
 
 .elements
 {
     font-family: 'Raleway', sans-serif;
+        color : #fd7336;
 
-    color : #33CC00;
     font-size: 2em;
     font-weight:bold;
 }
